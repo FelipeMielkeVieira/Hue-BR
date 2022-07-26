@@ -25,7 +25,7 @@ app.get("/campanhas", function (req, res) {
 })
 
 app.get("/niveis/1", function (req, res) {
-    res.sendFile(path.join(__dirname, "./public/niveis/tutorial.html"));
+    res.sendFile(path.join(__dirname, "./public/niveis/jogo.html"));
 })
 
 // start the server listening for requests
