@@ -39,12 +39,6 @@ loadSprite("redWall", "sprites/walls/redWall.png")
 loadSprite("orangeWall", "sprites/walls/orangeWall.png")
 
 scene("tutorial", () => {
-    add([
-        sprite("bluePortal"),
-        pos(50, 50),
-        scale(3),
-    ])
-
     const background = add([
         pos(0, 0),
         rect(totalWidth, totalHeight),
@@ -254,7 +248,11 @@ scene("tutorial", () => {
 });
 
 scene("level2", () => {
-    
-}) 
+    add([
+        text("Em desenvolvimento"),
+        pos(totalWidth*0.3, totalHeight*0.4),
+        scale(3)
+    ])
+})
 
 go("tutorial");
