@@ -39,6 +39,7 @@ loadSprite("redWall", "sprites/walls/redWall.png")
 loadSprite("orangeWall", "sprites/walls/orangeWall.png")
 
 scene("tutorial", () => {
+
     const background = add([
         pos(0, 0),
         rect(totalWidth, totalHeight),
@@ -99,7 +100,7 @@ scene("tutorial", () => {
         "alcapao",
         sprite("alcapao"),
         pos(totalWidth * 0.9, totalHeight * 0.85),
-        scale(1.5),
+        scale(2),
         area(),
         solid(),
     ])
@@ -114,9 +115,9 @@ scene("tutorial", () => {
 
     const greenWall = add([
         "greenWall",
-        rect(70, totalHeight),
+        rect(70, totalHeight - 20),
         color(0, 255, 0),
-        pos(totalWidth * 0.2, 0),
+        pos(totalWidth * 0.2, 10),
         state("visivel", ["visivel", "invisivel"]),
         area(),
         solid(),
@@ -124,8 +125,8 @@ scene("tutorial", () => {
 
     const blueWall = add([
         "blueWall",
-        rect(70, totalHeight * 0.3),
-        pos(totalWidth * 0.7, 0),
+        rect(70, (totalHeight * 0.3) - 10),
+        pos(totalWidth * 0.7, 10),
         color(0, 0, 255),
         area(),
         solid(),
@@ -133,7 +134,7 @@ scene("tutorial", () => {
 
     const yellowWall = add([
         "yellowWall",
-        rect(70, totalHeight * 0.7),
+        rect(70, (totalHeight * 0.7) - 10),
         pos(totalWidth * 0.7, totalHeight * 0.3),
         color(247, 217, 23),
         area(),
@@ -244,6 +245,42 @@ scene("tutorial", () => {
         player.use(sprite("playerD"));
         player.move(0, speed);
     })
+
+    const borderTop = add([
+        "borderTop",
+        rect(totalWidth, 10),
+        color(0, 0, 0, 0),
+        pos(0, 0),
+        area(),
+        solid(),
+    ])
+
+    const borderLeft = add([
+        "borderLeft",
+        rect(10, totalHeight),
+        color(0, 0, 0, 0),
+        pos(0, 0),
+        area(),
+        solid(),
+    ])
+
+    const borderBottom = add([
+        "borderBottom",
+        rect(totalWidth, 10),
+        color(0, 0, 0, 0),
+        pos(0, totalHeight - 10),
+        area(),
+        solid(),
+    ])
+
+    const borderRight = add([
+        "borderRight",
+        rect(10, totalHeight),
+        color(0, 0, 0, 0),
+        pos(totalWidth - 10, 0),
+        area(),
+        solid(),
+    ])
 
 });
 
