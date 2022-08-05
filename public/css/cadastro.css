@@ -92,3 +92,8 @@ body {
     border-radius: 0.3rem;
     border: none;
 }
+
+#cadastrar_link {
+    color: white;
+    text-decoration: none;
+}
