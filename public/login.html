@@ -6,32 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HUE BR - Login</title>
     <link rel="icon" type="image/x-icon" href="/img/gameicon.ico">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
 </head>
 <body>
-    <img src="img/logo-studio.png" alt="Imagem IDK Studios">
-
-    <img src="img/icon-ajuda.png" alt="Ícone Ajuda">
-
-    <div>
-        <h1>Login</h1>
-        <span>Usuário:</span>
-        <input type="text">
-        <span>Senha:</span>
-        <input type="password">
-        <input type="checkbox" name="manterLogin">
-        <span>Manter login</span>
+    <div class="divEsquerda">
+        <header>
+            <img id="logoEmpresa" src="img/logo-studio.png" alt="Imagem IDK Studios">
+            <img id="iconeAjuda" src="img/icon-ajuda.png" alt="Ícone Ajuda">
+        </header>
+        <h1 id="textoLogin">Login</h1>
+        <div class="divInput">
+            <span class="spanInput">Usuário:</span>
+            <input class="inputLogin" type="text">
+        </div>
+        <div class="divInput">
+            <span class="spanInput">Senha:</span>
+            <input class="inputLogin" type="password">
+        </div>
+        <div class="divCheckbox">
+            <input id="checkbox" type="checkbox" name="manterLogin">
+            <label for="checkbox" id="manterLogin">Manter login</label>
+        </div>
+        <div id="divEntrar">
+            <button id="botaoEntrar">
+                <img id="imgEntrar" src="./img/icon-seta.png" alt="Ícone Seta">
+            </button>
+        </div>
+        <a id="criarConta" href="cadastro.html">Criar uma conta</a>
     </div>
-
-    <div>
-        <img src="img/icon-seta.png" alt="Ícone Seta">
-    </div>
-
-    <span><a href="./cadastro.html">Criar uma conta</a></span>
-
-    <div>
-        <img src="img/img-login.webp" alt="Imagem Login">
-        <h2>HUE BR</h2>
+    <div class="divDireita">
+        <h2 id="tituloJogo">HUE BR</h2>
     </div>
 </body>
 </html>
