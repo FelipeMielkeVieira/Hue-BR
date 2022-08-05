@@ -50,11 +50,13 @@ body {
     font-size: 3rem;
     margin-top: 0;
     margin-bottom: 0.5rem;
+    font-weight: 800;
 }
 
 #cadastro_title {
     font-size: 2.5rem;
     margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 #container_forms {
