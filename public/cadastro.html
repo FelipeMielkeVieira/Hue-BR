@@ -6,22 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HUE BR - Cadastro</title>
     <link rel="icon" type="image/x-icon" href="/img/gameicon.ico">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
-    <div>
-        <img src="img/logo-studio.png" alt="Imagem IDK Studios">
-        <h1>HUE BR</h1>
-        <h2>Cadastro</h2>
-        <input type="email" placeholder="Email">
-        <br>
-        <input type="text" placeholder="Nome usuário">
-        <br>
-        <input type="password" placeholder="Senha">
-        <br>
-        <input type="password" placeholder="Repetir senha">
-        <br>
-        <button type="submit">Cadastrar</button>
+    <div id="container_cadastro">
+        <div id="container_logo">
+            <img id="logo" src="img/logo-studio.png" alt="Imagem IDK Studios">
+        </div>
+        <div id="cadastro">
+            <h1 id="title">HUE BR</h1>
+            <h2 id="cadastro_title">Cadastro</h2>
+            <div id="container_forms">
+                <input class="input" type="email" placeholder="Email">
+                <input class="input" type="text" placeholder="Nome usuário">
+                <input class="input" type="password" placeholder="Senha">
+                <input class="input" type="password" placeholder="Repetir senha">
+                <div id="container_button">
+                    <button id="botao_submit" type="submit">Cadastrar</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
