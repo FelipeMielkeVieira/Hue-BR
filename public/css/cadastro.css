@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/fundo_cadastro.jpg");
+    background-repeat: repeat-y;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container_cadastro {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 1vw;
+    padding-bottom: 1.3rem;
+    width: 40%;
+    border-radius: 0.5rem;
+}
+
+#container_logo {
+    width: 100%;
+}
+
+#logo {
+    height: 2rem;
+}
+
+#title, #cadastro_title {
+    font-family: Rubik;
+    color: #483078;
+    font-weight: bold;
+}
+
+#cadastro {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+}
+
+#title {
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+#cadastro_title {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+#container_forms {
+    width: 100%;
+}
+
+.input {
+    padding: 4%;
+    background-color: #D9D9D9;
+    border: 0;
+    border-radius: 5px;
+    width: 92%;
+    outline: none;
+    margin-bottom: 1.3rem;
+}
+
+.input::placeholder {
+    color: #483078;
+    font-weight: bold;
+}
+
+#container_button {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+#botao_submit {
+    padding: 0.6rem 1.5rem;
+    background-color: #8363C1;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    border: none;
+}
