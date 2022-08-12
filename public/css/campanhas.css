@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #906090 0%, #906090 0.01%, #1F3663 100%, #1F3663 100%);
+    background-attachment: fixed;
+}
+
+.divCamp h1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.divCamp {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.divCampCriadas{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.tituloCamp {
+    font-family: 'Rubik';
+    font-weight: 700;
+    font-size: 80px;
+    color: white;
+}
+
+.botaoCamp {
+    float: left;
+    overflow: auto;
+    margin: 10px 20px;
+    width: 150px;
+    height: 150px;
+    color: white;
+    font-family: 'Rubik';
+    font-size: 50px;
+    font-weight: 700;
+    background: #001848;
+    border: 5px solid #FFFFFF;
+    border-radius: 30px;
+}
+
+.criadorCamp {
+    overflow: auto;
+    clear: left;
+    font-family: 'Rubik';
+    font-weight: 800;
+    font-size: 30px;
+    color: white;
+}
+
+.divCriaCamp {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    overflow: auto;
+}
