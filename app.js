@@ -7,13 +7,13 @@ const app = express()
 
 const path = require("path");
 
-// const sql = mysql.createConnection({
-//     host: 'localhost',
-//     user: 'root',
-//     password: 'root',
-//     port: 3306,
-//     database: 'hue_br'
-// });
+const sql = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    port: 3306,
+    database: 'hue_br'
+});
 
 // use the express-static middleware
 app.use(express.static("public"))
@@ -53,9 +53,9 @@ app.get("/usuarios", (req, res) => {
     })
 })
 
-app.get("/cadastrar", (req, res) => {
-    console.log(req.params.email);
-    sql.query("insert into usuario values (?,?,?,?,?)", [null, req.params.email, req.params.nome, req.params.senha, req.params.nivel])
+app.post("/cadastrar", (req, res) => {
+    console.log("dados: ", req.body)
+    sql.query("insert into usuario (id, email, nome, senha, nivel) values (?,?,?,?,?)", [null, req.body.email, req.body.nome, req.body.senha, req.body.nivel])
 })
 
 // start the server listening for requests
