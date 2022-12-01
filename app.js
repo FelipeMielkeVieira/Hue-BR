@@ -53,8 +53,9 @@ app.get("/usuarios", (req, res) => {
     })
 })
 
-app.get("/cadastrar_user", (req, res) => {
-    sql.query("insert into usuario values (?,?,?,?,?)", [null, req.params.email, req.params.nome, req.params.senha, 0])
+app.get("/cadastrar", (req, res) => {
+    console.log(req.params.email);
+    sql.query("insert into usuario values (?,?,?,?,?)", [null, req.params.email, req.params.nome, req.params.senha, req.params.nivel])
 })
 
 // start the server listening for requests

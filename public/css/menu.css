@@ -48,3 +48,8 @@ body {
     margin-bottom: 3rem;
     width: 80%;
 }
+
+#estiloFonte{
+    color: white;
+    text-decoration: none;
+}
