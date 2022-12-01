@@ -25,8 +25,8 @@ loadSprite("whiteButR", "sprites/backgroundBut/whiteButR.png")
 loadSprite("whiteButL", "sprites/backgroundBut/whiteButL.png")
 loadSprite("yellowButR", "sprites/backgroundBut/yellowButR.png")
 loadSprite("yellowButL", "sprites/backgroundBut/yellowButL.png")
-loadSprite("redButR", "sprites/backgroundBut/redButR.png")
-loadSprite("redButL", "sprites/backgroundBut/redButL.png")
+loadSprite("redButL", "sprites/backgroundBut/redButR.png")
+loadSprite("redButR", "sprites/backgroundBut/redButL.png")
 loadSprite("orangeButR", "sprites/backgroundBut/orangeButR.png")
 loadSprite("orangeButL", "sprites/backgroundBut/orangeButL.png")
 loadSprite("blackButR", "sprites/backgroundBut/blackButR.png")
@@ -319,30 +319,6 @@ scene("nivel2", () => {
     ])
 
     add([
-        "redBut",
-        sprite("redButL"),
-        pos(totalWidth * 0.056, totalHeight * 0.1),
-        scale(scaleBut),
-        area(),
-    ])
-
-    add([
-        "redBut",
-        sprite("redButR"),
-        pos(totalWidth * 0.056, totalHeight * 0.3),
-        scale(scaleBut),
-        area(),
-    ])
-
-    add([
-        "orangeBut",
-        sprite("orangeButL"),
-        pos(totalWidth * 0.056, totalHeight * 0.5),
-        scale(scaleBut),
-        area(),
-    ])
-
-    add([
         "whiteBut",
         sprite("whiteButR"),
         pos(totalWidth * 0.08, totalHeight * 0.65),
@@ -351,25 +327,9 @@ scene("nivel2", () => {
     ])
 
     add([
-        "blueBut",
-        sprite("blueButL"),
-        pos(totalWidth * 0.47, totalHeight * 0.8),
-        scale(scaleBut),
-        area(),
-    ])
-
-    add([
-        "greenBut",
-        sprite("greenButR"),
-        pos(totalWidth * 0.5, totalHeight * 0.8),
-        scale(scaleBut),
-        area(),
-    ])
-
-    add([
         "yellowBut",
         sprite("yellowButL"),
-        pos(totalWidth * 0.85, totalHeight * 0.2),
+        pos(totalWidth * 0.056, totalHeight * 0.4),
         scale(scaleBut),
         area(),
     ])
@@ -377,16 +337,65 @@ scene("nivel2", () => {
     add([
         "blueBut",
         sprite("blueButR"),
-        pos(totalWidth * 0.88, totalHeight * 0.2),
+        pos(totalWidth * 0.08, totalHeight * 0.4),
+        scale(scaleBut),
+        area(),
+    ])
+
+
+    add([
+        "yellowBut",
+        sprite("yellowButR"),
+        pos(totalWidth * 0.08, totalHeight * 0.1),
+        scale(scaleBut),
+        area(),
+    ])
+    
+    add([
+        "redBut",
+        sprite("redButL"),
+        pos(totalWidth * 0.056, totalHeight * 0.1),
+        scale(scaleBut),
+        area(),
+    ])
+
+    add([
+        "orangeBut",
+        sprite("orangeButL"),
+        pos(totalWidth * 0.25, totalHeight * 0.8),
+        scale(scaleBut),
+        area(),
+    ])
+
+    add([
+        "redBut",
+        sprite("redButR"),
+        pos(totalWidth * 0.273, totalHeight * 0.8),
+        scale(scaleBut),
+        area(),
+    ])
+
+    add([
+        "blueBut",
+        sprite("blueButL"),
+        pos(totalWidth * 0.377, totalHeight * 0.4),
+        scale(scaleBut),
+        area(),
+    ])
+
+    add([
+        "greenBut",
+        sprite("greenButR"),
+        pos(totalWidth * 0.4, totalHeight * 0.4),
         scale(scaleBut),
         area(),
     ])
 
     const greenWall = add([
         "greenWall",
-        rect(70, totalHeight - 20),
+        rect(30, 53),
         color(0, 255, 0),
-        pos(totalWidth * 0.2, 10),
+        pos(totalWidth * 0.2, totalHeight*0.566),
         state("visivel", ["visivel", "invisivel"]),
         area(),
         solid(),
@@ -404,18 +413,26 @@ scene("nivel2", () => {
 
     const redWall = add([
         "redWall",
-        rect(30, 105),  
+        rect(70, 30),
+        pos(totalWidth * 0.75, totalHeight * 0.2),
         color(255, 0, 0),
-        pos(totalWidth * 0.8, totalHeight * 0.818),
-        state("visivel", ["visivel", "invisivel"]),
+        area(),
+        solid(),
+    ])
+
+    const redWall2 = add([
+        "redWall",
+        rect(147, 30),
+        pos(totalWidth * 0.74, totalHeight * 0.315),
+        color(255, 0, 0),
         area(),
         solid(),
     ])
 
     const blueWall = add([
         "blueWall",
-        rect(70, (totalHeight * 0.3) - 10),
-        pos(totalWidth * 0.7, 10),
+        rect(162, 30),
+        pos(totalWidth * 0.17, totalHeight * 0.315),
         color(0, 0, 255),
         area(),
         solid(),
@@ -423,8 +440,8 @@ scene("nivel2", () => {
 
     const yellowWall = add([
         "yellowWall",
-        rect(70, (totalHeight * 0.7) - 10),
-        pos(totalWidth * 0.7, totalHeight * 0.3),
+        rect(70, 30),
+        pos(totalWidth * 0.7, totalHeight * 0.2),
         color(247, 217, 23),
         area(),
         solid(),
@@ -432,8 +449,8 @@ scene("nivel2", () => {
 
     add([
         "whiteWall",
-        rect(30, 140),
-        pos(totalWidth * 0.12, totalHeight * 0.5963),
+        rect(30, 106),
+        pos(totalWidth * 0.12, totalHeight * 0.65),
         color(128, 128, 128),
         area(),
         solid(),
@@ -457,6 +474,87 @@ scene("nivel2", () => {
         solid(),
     ])
 
+    add([
+        "whiteWall",
+        rect(30, 213),
+        pos(totalWidth * 0.2, totalHeight * 0.65),
+        color(128, 128, 128),
+        area(),
+        solid(),
+    ])
+
+    add([
+        "whiteWall",
+        rect(totalWidth*0.35, 30),
+        pos(totalWidth * 0.2, totalHeight * 0.65),
+        color(128, 128, 128),
+        area(),
+        solid(),
+    ])
+
+    add([
+        "whiteWall",
+        rect(30, 213),
+        pos(totalWidth * 0.55, totalHeight * 0.36),
+        color(128, 128, 128),
+        area(),
+        solid(),
+    ])
+
+    add([
+        "whiteWall",
+        rect(totalWidth*0.45, 30),
+        pos(totalWidth * 0.29, totalHeight * 0.315),
+        color(128, 128, 128),
+        area(),
+        solid(),
+    ])
+    
+    add([
+        "whiteWall",
+        rect(totalWidth*0.48, 30),
+        pos(totalWidth * 0, totalHeight * 0.52),
+        color(128, 128, 128),
+        area(),
+        solid(),
+    ])
+
+    add([
+        "whiteWall",
+        rect(30, 150),
+        pos(totalWidth * 0.15, totalHeight * 0.315),
+        color(128, 128, 128),
+        area(),
+        solid(),
+    ])
+
+    add([
+        "whiteWall",
+        rect(totalWidth*0.15, 30),
+        pos(totalWidth * 0.85, totalHeight * 0.315),
+        color(128, 128, 128),
+        area(),
+        solid(),
+    ])
+
+    add([
+        "whiteWall",
+        rect(totalWidth*0.7, 30),
+        pos(totalWidth * 0, totalHeight * 0.2),
+        color(128, 128, 128),
+        area(),
+        solid(),
+    ])
+
+    add([
+        "whiteWall",
+        rect(totalWidth*0.2, 30),
+        pos(totalWidth * 0.8, totalHeight * 0.2),
+        color(128, 128, 128),
+        area(),
+        solid(),
+    ])
+
     const player = add([
         "player",
         sprite("playerU"),
@@ -471,6 +569,7 @@ scene("nivel2", () => {
         readd(blueWall)
         readd(orangeWall)
         readd(redWall)
+        readd(redWall2)
         readd(yellowWall)
     })
 
@@ -481,6 +580,7 @@ scene("nivel2", () => {
         readd(yellowWall)
         readd(orangeWall)
         readd(redWall)
+        readd(redWall2)
     })
 
     player.onCollide("blueBut", () => {
@@ -490,6 +590,7 @@ scene("nivel2", () => {
         readd(yellowWall)
         readd(orangeWall)
         readd(redWall)
+        readd(redWall2)
     })
 
     player.onCollide("yellowBut", () => {
@@ -499,6 +600,7 @@ scene("nivel2", () => {
         readd(blueWall)
         readd(orangeWall)
         readd(redWall)
+        readd(redWall2)
     })
 
     player.onCollide("orangeBut", () => {
@@ -508,11 +610,13 @@ scene("nivel2", () => {
         readd(blueWall)
         readd(yellowWall)
         readd(redWall)
+        readd(redWall2)
     })
 
     player.onCollide("redBut", () => {
         background.use(color(255, 0, 0))
         destroy(redWall)
+        destroy(redWall2)
         readd(greenWall)
         readd(blueWall)
         readd(yellowWall)
@@ -528,7 +632,7 @@ scene("nivel2", () => {
     ])
 
     player.onCollide("levelEnd", () => {
-        go("level2")
+        go("level3")
     })
 
     let speed = 200;

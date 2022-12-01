@@ -7,13 +7,13 @@ const app = express()
 
 const path = require("path");
 
-const sql = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    port: 3306,
-    database: 'hue_br'
-});
+// const sql = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'root',
+//     port: 3306,
+//     database: 'hue_br'
+// });
 
 // use the express-static middleware
 app.use(express.static("public"))
