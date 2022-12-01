@@ -350,7 +350,7 @@ scene("nivel2", () => {
         scale(scaleBut),
         area(),
     ])
-    
+
     add([
         "redBut",
         sprite("redButL"),
@@ -395,7 +395,7 @@ scene("nivel2", () => {
         "greenWall",
         rect(30, 53),
         color(0, 255, 0),
-        pos(totalWidth * 0.2, totalHeight*0.566),
+        pos(totalWidth * 0.2, totalHeight * 0.566),
         state("visivel", ["visivel", "invisivel"]),
         area(),
         solid(),
@@ -485,7 +485,7 @@ scene("nivel2", () => {
 
     add([
         "whiteWall",
-        rect(totalWidth*0.35, 30),
+        rect(totalWidth * 0.35, 30),
         pos(totalWidth * 0.2, totalHeight * 0.65),
         color(128, 128, 128),
         area(),
@@ -503,16 +503,16 @@ scene("nivel2", () => {
 
     add([
         "whiteWall",
-        rect(totalWidth*0.45, 30),
+        rect(totalWidth * 0.45, 30),
         pos(totalWidth * 0.29, totalHeight * 0.315),
         color(128, 128, 128),
         area(),
         solid(),
     ])
-    
+
     add([
         "whiteWall",
-        rect(totalWidth*0.48, 30),
+        rect(totalWidth * 0.48, 30),
         pos(totalWidth * 0, totalHeight * 0.52),
         color(128, 128, 128),
         area(),
@@ -530,7 +530,7 @@ scene("nivel2", () => {
 
     add([
         "whiteWall",
-        rect(totalWidth*0.15, 30),
+        rect(totalWidth * 0.15, 30),
         pos(totalWidth * 0.85, totalHeight * 0.315),
         color(128, 128, 128),
         area(),
@@ -539,7 +539,7 @@ scene("nivel2", () => {
 
     add([
         "whiteWall",
-        rect(totalWidth*0.7, 30),
+        rect(totalWidth * 0.7, 30),
         pos(totalWidth * 0, totalHeight * 0.2),
         color(128, 128, 128),
         area(),
@@ -548,7 +548,7 @@ scene("nivel2", () => {
 
     add([
         "whiteWall",
-        rect(totalWidth*0.2, 30),
+        rect(totalWidth * 0.2, 30),
         pos(totalWidth * 0.8, totalHeight * 0.2),
         color(128, 128, 128),
         area(),
@@ -830,7 +830,7 @@ scene("nivel3", () => {
     ])
 
     const greenBut1 = add([
-        "greenBut",
+        "greenBut1",
         sprite("greenButL"),
         pos(totalWidth * 0.04, totalHeight * 0.5),
         scale(scaleBut),
@@ -838,24 +838,54 @@ scene("nivel3", () => {
     ])
 
     const yellowBut1 = add([
-        "yellowBut",
+        "yellowBut1",
         sprite("yellowButR"),
         pos(totalWidth * 0.058, totalHeight * 0.5),
         scale(scaleBut),
         area()
     ])
 
+    const greenBut2 = add([
+        "greenBut",
+        sprite("greenButL"),
+        pos(totalWidth * 0.04, totalHeight * 0.8),
+        scale(scaleBut),
+        area()
+    ])
+
+    const redBut1 = add([
+        "redBut",
+        sprite("redButR"),
+        pos(totalWidth * 0.058, totalHeight * 0.8),
+        scale(scaleBut),
+        area()
+    ])
+
     player.onCollide("whiteBut", () => {
-        if(corBackground == "blue") {
+        if (corBackground == "blue") {
             corBackground = "white";
             background.use(color(255, 255, 255))
         }
     })
 
     player.onCollide("blueBut1", () => {
-        if(corBackground == "white") {
+        if (corBackground == "white") {
             corBackground = "blue";
             background.use(color(0, 0, 255))
+        }
+    })
+
+    player.onCollide("greenBut1", () => {
+        if (corBackground == "yellow") {
+            corBackground = "green";
+            background.use(color(0, 255, 0));
+        }
+    })
+
+    player.onCollide("yellowBut1", () => {
+        if (corBackground == "green") {
+            corBackground = "yellow";
+            background.use(color(247, 217, 23));
         }
     })
 })
