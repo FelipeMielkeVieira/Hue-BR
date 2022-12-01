@@ -6,35 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HUE BR - Campanhas</title>
+
     <link rel="icon" type="image/x-icon" href="/img/gameicon.ico">
     <link rel="stylesheet" href="css/campanhas.css">
+    <script src="./js/campanha.js"></script>
 </head>
 
 <body>
     <div class="divCamp">
         <h1 class="tituloCamp">Campanhas Comuns</h1>
-        <button class="botaoCamp">1</button>
-        <button class="botaoCamp">2</button>
-    </div>
-    <div class="divCamp">
-        <h1 class="tituloCamp">Campanhas Criadas</h1>
-        <div class="divCampCriadas">
-            <div class="divCriaCamp">
-                <button class="botaoCamp">COD</button>
-                <span class="criadorCamp">Criador</span>
-            </div>
-            <div class="divCriaCamp">
-                <button class="botaoCamp">COD</button>
-                <span class="criadorCamp">Criador</span>
-            </div>
-            <div class="divCriaCamp">
-                <button class="botaoCamp">COD</button>
-                <span class="criadorCamp">Criador</span>
-            </div>
-            <div class="divCriaCamp">
-                <button class="botaoCamp">COD</button>
-                <span class="criadorCamp">Criador</span>
-            </div>
+        <div id="campanhas">
+            <button onclick="nivel(1)" class="botaoCamp">1</button>
+            <button onclick="nivel(2)" class="botaoCamp">2</button>
+            <button onclick="nivel(3)" class="botaoCamp">3</button>
         </div>
     </div>
 </body>
