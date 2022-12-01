@@ -7,6 +7,7 @@
     <title>HUE BR - Login</title>
     <link rel="icon" type="image/x-icon" href="/img/gameicon.ico">
     <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/login.js"></script>
 </head>
 <body>
     <div class="divEsquerda">
@@ -17,18 +18,18 @@
         <h1 id="textoLogin">Login</h1>
         <div class="divInput">
             <span class="spanInput">Usuário:</span>
-            <input class="inputLogin" type="text">
+            <input id="nome" class="inputLogin" type="text">
         </div>
         <div class="divInput">
             <span class="spanInput">Senha:</span>
-            <input class="inputLogin" type="password">
+            <input id="senha" class="inputLogin" type="password">
         </div>
         <div class="divCheckbox">
             <input id="checkbox" type="checkbox" name="manterLogin">
             <label for="checkbox" id="manterLogin">Manter login</label>
         </div>
         <div id="divEntrar">
-            <button id="botaoEntrar">
+            <button onclick="dadosLogin()" id="botaoEntrar">
                 <img id="imgEntrar" src="./img/icon-seta.png" alt="Ícone Seta">
             </button>
         </div>
