@@ -12,7 +12,7 @@ const sql = mysql.createConnection({
     user: 'root',
     password: 'root',
     port: 3306,
-    database: 'hue_br'
+    // database: 'hue_br'
 });
 
 // use the express-static middleware
