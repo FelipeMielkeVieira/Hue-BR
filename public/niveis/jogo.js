@@ -813,31 +813,6 @@ scene("nivel3", () => {
         solid(),
     ])
 
-    function trocaCor() {
-        let cor = [background.color.r, background.color.g, background.color.b]
-        // readd(greenWall)
-        // readd(blueWall)
-        // readd(orangeWall)
-        // readd(redWall)
-        // readd(redWall2)
-        // readd(redWall3)
-        // readd(yellowWall)
-        // readd(yellowWall2)
-        // if (cor[0] == 255 && cor[1] == 0 && cor[2] == 0) {
-        //     destroy(redWall)
-        //     destroy(redWall2)
-        //     destroy(redWall3)
-        // } else if (cor[0] == 0 && cor[1] == 255 && cor[2] == 0) {
-        //     destroy(greenWall)
-        // } else if (cor[0] == 0 && cor[1] == 0 && cor[2] == 255) {
-        //     destroy(blueWall)
-        // } else if (cor[0] == 247 && cor[1] == 217 && cor[2] == 23) {
-        //     destroy(yellowWall)
-        // } else if (cor[0] == 249 && cor[1] == 157 && cor[2] == 49) {
-        //     destroy(orangeWall)
-        // }
-    }
-
     add([
         "whiteWall",
         rect(totalWidth * 0.1, totalHeight * 0.2),
@@ -858,8 +833,17 @@ scene("nivel3", () => {
 
     add([
         "whiteWall",
-        rect(totalWidth * 0.15, totalHeight * 0.1),
+        rect(totalWidth * 0.2, totalHeight * 0.1),
         pos(totalWidth * 0.457, totalHeight * 0.2),
+        color(128, 128, 128),
+        area(),
+        solid(),
+    ])
+
+    add([
+        "whiteWall",
+        rect(totalWidth * 0.2, totalHeight * 0.15),
+        pos(totalWidth * 0.375, totalHeight * 0.6),
         color(128, 128, 128),
         area(),
         solid(),
@@ -930,6 +914,76 @@ scene("nivel3", () => {
         rect(totalWidth * 0.1, totalHeight * 0.15),
         color(255, 0, 0),
         pos(totalWidth * 0.285, totalHeight * 0.45),
+        state("visivel", ["visivel", "invisivel"]),
+        area(),
+        solid(),
+    ])
+
+    const redWall3 = add([
+        "redWall",
+        rect(totalWidth * 0.15, totalHeight * 0.1),
+        color(255, 0, 0),
+        pos(totalWidth * 0.65, totalHeight * 0.2),
+        state("visivel", ["visivel", "invisivel"]),
+        area(),
+        solid(),
+    ])
+
+    const yellowWall2 = add([
+        "yellowWall",
+        rect(totalWidth * 0.075, totalHeight * 0.185),
+        color(247, 217, 23),
+        pos(totalWidth * 0.725, 10),
+        state("visivel", ["visivel", "invisivel"]),
+        area(),
+        solid(),
+    ])
+
+    const yellowWall3 = add([
+        "yellowWall",
+        rect(totalWidth * 0.192, totalHeight * 0.1),
+        color(247, 217, 23),
+        pos(totalWidth * 0.8, totalHeight * 0.2),
+        state("visivel", ["visivel", "invisivel"]),
+        area(),
+        solid(),
+    ])
+
+    const greenWall2 = add([
+        "greenWall",
+        rect(totalWidth * 0.15, totalHeight * 0.15),
+        color(0, 255, 0),
+        pos(totalWidth * 0.575, totalHeight * 0.6),
+        state("visivel", ["visivel", "invisivel"]),
+        area(),
+        solid(),
+    ])
+
+    const blueWall3 = add([
+        "blueWall",
+        rect(totalWidth * 0.075, totalHeight * 0.3),
+        color(0, 0, 255),
+        pos(totalWidth * 0.65, totalHeight * 0.3),
+        state("visivel", ["visivel", "invisivel"]),
+        area(),
+        solid(),
+    ])
+
+    const yellowWall4 = add([
+        "yellowWall",
+        rect(totalWidth * 0.075, totalHeight * 0.235),
+        color(247, 217, 23),
+        pos(totalWidth * 0.65, totalHeight * 0.75),
+        state("visivel", ["visivel", "invisivel"]),
+        area(),
+        solid(),
+    ])
+
+    const orangeWall2 = add([
+        "orangeWall",
+        rect(totalWidth * 0.2675, totalHeight * 0.15),
+        color(249, 157, 49),
+        pos(totalWidth * 0.725, totalHeight * 0.6),
         state("visivel", ["visivel", "invisivel"]),
         area(),
         solid(),
@@ -1031,10 +1085,133 @@ scene("nivel3", () => {
         area()
     ])
 
+    const greenBut3 = add([
+        "greenBut3",
+        sprite("greenButL"),
+        pos(totalWidth * 0.4 , totalHeight * 0.8),
+        scale(scaleBut),
+        area()
+    ])
+
+    const yellowBut3 = add([
+        "yellowBut3",
+        sprite("yellowButR"),
+        pos(totalWidth * 0.418 , totalHeight * 0.8),
+        scale(scaleBut),
+        area()
+    ])
+
+    const redBut4 = add([
+        "redBut4",
+        sprite("redButL"),
+        pos(totalWidth * 0.5 , totalHeight * 0.5),
+        scale(scaleBut),
+        area()
+    ])
+
+    const greenBut4 = add([
+        "greenBut4",
+        sprite("greenButR"),
+        pos(totalWidth * 0.518, totalHeight * 0.5),
+        scale(scaleBut),
+        area()
+    ])
+
+    const blueBut5 = add([
+        "blueBut5",
+        sprite("blueButL"),
+        pos(totalWidth * 0.8, totalHeight * 0.5),
+        scale(scaleBut),
+        area()
+    ])
+
+    const orangeBut = add([
+        "orangeBut",
+        sprite("orangeButR"),
+        pos(totalWidth * 0.818, totalHeight * 0.5),
+        scale(scaleBut),
+        area()
+    ])
+
+    const redBut5 = add([
+        "redBut5",
+        sprite("redButL"),
+        pos(totalWidth * 0.9, totalHeight * 0.5),
+        scale(scaleBut),
+        area()
+    ])
+
+    const yellowBut4 = add([
+        "yellowBut4",
+        sprite("yellowButR"),
+        pos(totalWidth * 0.918, totalHeight * 0.5),
+        scale(scaleBut),
+        area()
+    ])
+
+    const yellowBut5 = add([
+        "yellowBut5",
+        sprite("yellowButL"),
+        pos(totalWidth * 0.9, totalHeight * 0.85),
+        scale(scaleBut),
+        area()
+    ])
+
+    const orangeBut2 = add([
+        "orangeBut2",
+        sprite("orangeButR"),
+        pos(totalWidth * 0.918, totalHeight * 0.85),
+        scale(scaleBut),
+        area()
+    ])
+
+    function trocaCor() {
+        readd(blueWall1);
+        readd(blueWall2);
+        readd(blueWall3);
+        readd(redWall1);
+        readd(redWall2);
+        readd(redWall3);
+        readd(greenWall1);
+        readd(greenWall2);
+        readd(yellowWall1);
+        readd(yellowWall2);
+        readd(yellowWall3);
+        readd(yellowWall4);
+        readd(orangeWall1);
+        readd(orangeWall2);
+
+        if(corBackground == "blue") {
+            destroy(blueWall1);
+            destroy(blueWall2);
+            destroy(blueWall3);
+        }
+        if(corBackground == "red") {
+            destroy(redWall1);
+            destroy(redWall2);
+            destroy(redWall3);
+        }
+        if(corBackground == "green") {
+            destroy(greenWall1);
+            destroy(greenWall2);
+        }
+        if(corBackground == "yellow") {
+            destroy(yellowWall1);
+            destroy(yellowWall2);
+            destroy(yellowWall3);
+            destroy(yellowWall4);
+        }
+        if(corBackground == "orange") {
+            destroy(orangeWall1);
+            destroy(orangeWall2);
+        }
+    }
+
     player.onCollide("whiteBut", () => {
         if (corBackground == "blue") {
             corBackground = "white";
-            background.use(color(255, 255, 255))
+            background.use(color(255, 255, 255));
+            trocaCor();
         }
     })
 
@@ -1042,6 +1219,7 @@ scene("nivel3", () => {
         if (corBackground == "white") {
             corBackground = "blue";
             background.use(color(0, 0, 255))
+            trocaCor();
         }
     })
 
@@ -1049,6 +1227,7 @@ scene("nivel3", () => {
         if (corBackground == "yellow") {
             corBackground = "green";
             background.use(color(0, 255, 0));
+            trocaCor();
         }
     })
 
@@ -1056,6 +1235,7 @@ scene("nivel3", () => {
         if (corBackground == "green") {
             corBackground = "yellow";
             background.use(color(247, 217, 23));
+            trocaCor();
         }
     })
 
@@ -1063,6 +1243,7 @@ scene("nivel3", () => {
         if (corBackground == "red") {
             corBackground = "green";
             background.use(color(0, 255, 0));
+            trocaCor();
         }
     })
 
@@ -1070,6 +1251,7 @@ scene("nivel3", () => {
         if (corBackground == "green") {
             corBackground = "red";
             background.use(color(255, 0, 0));
+            trocaCor();
         }
     })
 
@@ -1077,6 +1259,7 @@ scene("nivel3", () => {
         if (corBackground == "yellow") {
             corBackground = "blue";
             background.use(color(0, 0, 255));
+            trocaCor();
         }
     })
 
@@ -1084,6 +1267,7 @@ scene("nivel3", () => {
         if (corBackground == "blue") {
             corBackground = "yellow";
             background.use(color(247, 217, 23));
+            trocaCor();
         }
     })
 
@@ -1091,6 +1275,7 @@ scene("nivel3", () => {
         if (corBackground == "red") {
             corBackground = "blue";
             background.use(color(0, 0, 255));
+            trocaCor();
         }
     })
 
@@ -1098,6 +1283,7 @@ scene("nivel3", () => {
         if (corBackground == "blue") {
             corBackground = "red";
             background.use(color(255, 0, 0));
+            trocaCor();
         }
     })
 
@@ -1105,6 +1291,7 @@ scene("nivel3", () => {
         if (corBackground == "red") {
             corBackground = "blue";
             background.use(color(0, 0, 255));
+            trocaCor();
         }
     })
 
@@ -1112,8 +1299,131 @@ scene("nivel3", () => {
         if (corBackground == "blue") {
             corBackground = "red";
             background.use(color(255, 0, 0));
+            trocaCor();
         }
     })
+
+    player.onCollide("redBut4", () => {
+        if (corBackground == "green") {
+            corBackground = "red";
+            background.use(color(255, 0, 0));
+            trocaCor();
+        }
+    })
+
+    player.onCollide("greenBut4", () => {
+        if (corBackground == "red") {
+            corBackground = "green";
+            background.use(color(0, 255, 0));
+            trocaCor();
+        }
+    })
+
+    player.onCollide("greenBut3", () => {
+        if (corBackground == "yellow") {
+            corBackground = "green";
+            background.use(color(0, 255, 0));
+            trocaCor();
+        }
+    })
+
+    player.onCollide("yellowBut3", () => {
+        if (corBackground == "green") {
+            corBackground = "yellow";
+            background.use(color(247, 217, 23));
+            trocaCor();
+        }
+    })
+
+    player.onCollide("blueBut5", () => {
+        if (corBackground == "orange") {
+            corBackground = "blue";
+            background.use(color(0, 0, 255));
+            trocaCor();
+        }
+    })
+
+    player.onCollide("orangeBut", () => {
+        if (corBackground == "blue") {
+            corBackground = "orange";
+            background.use(color(249, 157, 49));
+            trocaCor();
+        }
+    })
+
+    player.onCollide("redBut5", () => {
+        if (corBackground == "yellow") {
+            corBackground = "red";
+            background.use(color(255, 0, 0));
+            trocaCor();
+        }
+    })
+
+    player.onCollide("yellowBut4", () => {
+        if (corBackground == "red") {
+            corBackground = "yellow";
+            background.use(color(247, 217, 23));
+            trocaCor();
+        }
+    })
+
+    player.onCollide("yellowBut5", () => {
+        if (corBackground == "orange") {
+            corBackground = "yellow";
+            background.use(color(247, 217, 23));
+            trocaCor();
+        }
+    })
+
+    player.onCollide("orangeBut2", () => {
+        if (corBackground == "yellow") {
+            corBackground = "orange";
+            background.use(color(249, 157, 49));
+            trocaCor();
+        }
+    })
+
+    let temChave = false;
+
+    add([
+        "alcapao",
+        sprite("alcapao"),
+        pos(totalWidth * 0.9, totalHeight * 0.05),
+        scale(2),
+        area(),
+        solid(),
+    ])
+
+    add([
+        "key",
+        sprite('key'),
+        pos(totalWidth * 0.5, totalHeight * 0.8),
+        scale(2),
+        area(),
+    ])
+
+    player.onCollide("key", () => {
+        temChave = true;
+        destroyAll("key")
+    })
+
+    player.onCollide("alcapao", () => {
+        if (temChave) {
+            destroyAll("alcapao")
+            add([
+                "levelEnd",
+                sprite("levelEnd"),
+                pos(totalWidth * 0.9, totalHeight * 0.05),
+                scale(1.5),
+                area(),
+            ])
+        }
+    })
+
+    player.onCollide("levelEnd", () => {
+        go("nivel4")
+    })
+
 })
 
 scene("nivel4", () => {
