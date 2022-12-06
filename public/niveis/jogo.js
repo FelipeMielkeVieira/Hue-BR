@@ -1682,6 +1682,7 @@ scene("nivel4", () => {
 
     add([
         "whiteWall",
+        "wall",
         rect(totalWidth * 0.653, 30),
         pos(totalWidth * 0.177, totalHeight * 0.48),
         color(128, 128, 128),
@@ -1689,8 +1690,9 @@ scene("nivel4", () => {
         solid(),
     ])
 
-    add([
+    const muro1 = add([
         "blackWall",
+        "muro1",
         rect(totalWidth * 0.653, 30),
         pos(totalWidth * 0.177, totalHeight * 0.1),
         color(0, 0, 0),
@@ -1698,8 +1700,9 @@ scene("nivel4", () => {
         solid(),
     ])
 
-    add([
+    const muro2 = add([
         "blackWall",
+        "muro2",
         rect(totalWidth * 0.652, 30),
         pos(totalWidth * 0.177, totalHeight * 0.7),
         color(0, 0, 0),
@@ -1735,6 +1738,7 @@ scene("nivel4", () => {
             destroy(blueWall)
         } else if (cor[0] == 247 && cor[1] == 217 && cor[2] == 23) {
             destroy(yellowWall)
+            destroy(yellowWall2);
         } else if (cor[0] == 249 && cor[1] == 157 && cor[2] == 49) {
             destroy(orangeWall)
         }
@@ -1946,6 +1950,7 @@ scene("nivel4", () => {
 
     const borderTop = add([
         "borderTop",
+        "wall",
         rect(totalWidth, 10),
         color(0, 0, 0, 0),
         pos(0, 0),
@@ -1964,6 +1969,7 @@ scene("nivel4", () => {
 
     const borderBottom = add([
         "borderBottom",
+        "wall",
         rect(totalWidth, 10),
         color(0, 0, 0, 0),
         pos(0, totalHeight - 10),
@@ -1979,6 +1985,22 @@ scene("nivel4", () => {
         area(),
         solid(),
     ])
+
+    let muro1V = -50;
+    let muro2V = -50;
+
+    onUpdate(() => {
+        muro1.move(0, muro1V);
+        muro2.move(0, muro2V);
+    })
+
+    muro1.onCollide("wall", () => {
+        muro1V = -muro1V;
+    })
+
+    muro2.onCollide("wall", () => {
+        muro2V = -muro2V;
+    })
 })
 
-go("nivel3");
+go("nivel4");
