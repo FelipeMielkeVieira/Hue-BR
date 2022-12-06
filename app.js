@@ -51,6 +51,14 @@ app.get("/niveis/1", function (req, res) {
 //     res.sendFile(path.join(__dirname, "./public/niveis/jogo3.html"));
 // })
 
+// app.get("/niveis/4", function (req, res) {
+//     res.sendFile(path.join(__dirname, "./public/niveis/jogo4.html"));
+// })
+
+// app.get("/niveis/5", function (req, res) {
+//     res.sendFile(path.join(__dirname, "./public/niveis/jogo5.html"));
+// })
+
 app.get("/usuarios", (req, res) => {
     sql.query("select * from usuario", (error, results, fields) => {
         res.json(results);

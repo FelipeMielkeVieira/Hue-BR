@@ -45,13 +45,14 @@ body {
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    width: 60%;
-    height: 90%;
+    width: 80%;
+    height: 100%;
 }
 
 #title {
     font-size: 3rem;
     font-weight: 800;
+    margin-bottom: 1.5rem;
 }
 
 #cadastro_title {
@@ -60,6 +61,7 @@ body {
 
 #container_forms {
     width: 100%;
+    height: 100%;
 }
 
 .input {
@@ -84,10 +86,13 @@ body {
 }
 
 #botao_submit {
+    cursor: pointer;
     padding: 0.6rem 1.5rem;
     background-color: #8363C1;
     color: white;
+    font-size: 17px;
     font-weight: bold;
+    height: 2.5rem;
     border-radius: 0.3rem;
     border: none;
 }

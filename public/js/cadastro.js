@@ -9,9 +9,10 @@ btn.addEventListener("click", function () {
     const nivel = 1;
     const id = null;
 
-    console.log("Dados: ", email, nome, senha, nivel);
-
-    console.log(JSON.stringify({ id: id, email: email, nome: nome, senha: senha, nivel: nivel }))
+    if (email == "" || nome == "" || senha == "") {
+        alert("Preencha todos os dados!")
+        windows.href = '/cadastro'
+    }
 
     fetch("/cadastrar",
         {
@@ -22,7 +23,8 @@ btn.addEventListener("click", function () {
     )
         .then(res => {
         })
-        
+
     alert("Cadastro feito com sucesso!")
     window.location.href = "/"
+
 });
