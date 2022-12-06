@@ -2003,4 +2003,301 @@ scene("nivel4", () => {
     })
 })
 
-go("nivel1");
+scene("nivel5", () => {
+
+    const borderTop = add([
+        "borderTop",
+        "wall",
+        rect(totalWidth, 10),
+        color(0, 0, 0, 0),
+        pos(0, 0),
+        area(),
+        solid(),
+    ])
+
+    const borderLeft = add([
+        "borderLeft",
+        "wall",
+        rect(10, totalHeight),
+        color(0, 0, 0, 0),
+        pos(0, 0),
+        area(),
+        solid(),
+    ])
+
+    const borderBottom = add([
+        "borderBottom",
+        "wall",
+        rect(totalWidth, 10),
+        color(0, 0, 0, 0),
+        pos(0, totalHeight - 10),
+        area(),
+        solid(),
+    ])
+
+    const borderRight = add([
+        "borderRight",
+        "wall",
+        rect(10, totalHeight),
+        color(0, 0, 0, 0),
+        pos(totalWidth - 10, 0),
+        area(),
+        solid(),
+    ])
+
+    const background = add([
+        pos(0, 0),
+        rect(totalWidth, totalHeight),
+        outline(4),
+        color(255, 255, 255),
+        area(),
+    ])
+
+    add([
+        pos(20, 20),
+        color(0, 0, 0, 0),
+        text("Nivel 5", {
+            size: 35,
+        }),
+    ])
+
+    const player = add([
+        "player",
+        sprite("playerU"),
+        pos(totalWidth * 0.075, totalHeight * 0.6),
+        area(),
+        solid(),
+    ])
+
+    let speed = 200;
+
+    onKeyDown("left", () => {
+        player.use(sprite("playerL"));
+        player.move(-speed, 0);
+    })
+    onKeyDown("a", () => {
+        player.use(sprite("playerL"));
+        player.move(-speed, 0);
+    })
+
+    onKeyDown("right", () => {
+        player.use(sprite("playerR"));
+        player.move(speed, 0);
+    })
+    onKeyDown("d", () => {
+        player.use(sprite("playerR"));
+        player.move(speed, 0);
+    })
+
+    onKeyDown("up", () => {
+        player.use(sprite("playerU"));
+        player.move(0, -speed);
+    })
+    onKeyDown("w", () => {
+        player.use(sprite("playerU"));
+        player.move(0, -speed);
+    })
+
+    onKeyDown("down", () => {
+        player.use(sprite("playerD"));
+        player.move(0, speed);
+    })
+    onKeyDown("s", () => {
+        player.use(sprite("playerD"));
+        player.move(0, speed);
+    })
+
+    player.onCollide("blackWall", () => {
+        background.use(color(0, 0, 0))
+        destroy(player)
+        add([
+            pos(center()),
+            origin("center"),
+            color(125, 125, 125),
+            text("Perdeu!", {
+                size: 100,
+            }),
+            z(1)
+        ])
+        wait(1.5, () => {
+            go('nivel5')
+        })
+    })
+
+    add([
+        "blackWall",
+        "wall",
+        rect(totalWidth * 0.05, totalHeight * 0.6),
+        pos(totalWidth * 0.15, totalHeight * 0.4),
+        color(0, 0, 0),
+        area(),
+        solid(),
+    ])
+
+    add([
+        "blackWall",
+        "wall",
+        rect(totalWidth * 0.025, totalHeight * 0.4),
+        pos(totalWidth * 0.6, totalHeight * 0.6),
+        color(0, 0, 0),
+        area(),
+        solid(),
+    ])
+
+    let muro1V = -75;
+    let muro2V = -75;
+    let muro3V = -75;
+    let muro4V = -75;
+    let muro5V = 75;
+    let muro6V = 75;
+
+    const muro1 = add([
+        "blackWall",
+        "wall",
+        rect(totalWidth * 0.4, totalHeight * 0.05),
+        pos(10, 10),
+        color(0, 0, 0),
+        area(),
+        solid(),
+    ])
+
+    const muro2 = add([
+        "blackWall",
+        "wall",
+        rect(totalWidth * 0.2, totalHeight * 0.05),
+        pos(totalWidth * 0.2, totalHeight * 0.9),
+        color(0, 0, 0),
+        area(),
+        solid(),
+    ])
+
+    const muro3 = add([
+        "blackWall",
+        "wall",
+        rect(totalWidth * 0.025, totalHeight * 0.8),
+        pos(totalWidth * 0.4, totalHeight * 0.2),
+        color(0, 0, 0),
+        area(),
+        solid(),
+    ])
+
+    const muro4 = add([
+        "blackWall",
+        "wall",
+        rect(totalWidth * 0.1875, totalHeight * 0.05),
+        pos(totalWidth * 0.625, totalHeight * 0.6),
+        color(0, 0, 0),
+        area(),
+        solid(),
+    ])
+
+    const muro5 = add([
+        "blackWall",
+        "wall",
+        rect(totalWidth * 0.17, totalHeight * 0.05),
+        pos(totalWidth * 0.82, totalHeight * 0.6),
+        color(0, 0, 0),
+        area(),
+        solid(),
+    ])
+
+    const muro6 = add([
+        "blackWall",
+        "wall",
+        rect(totalWidth * 0.39, totalHeight * 0.05),
+        pos(totalWidth * 0.61, totalHeight * 0.15),
+        color(0, 0, 0),
+        area(),
+        solid(),
+    ])
+
+    muro1.onCollide("wall", () => {
+        muro1V = -muro1V;
+    })
+
+    muro2.onCollide("wall", () => {
+        muro2V = -muro2V;
+    })
+
+    muro3.onCollide("wall", () => {
+        muro3V = -muro3V;
+    })
+
+    muro4.onCollide("wall", () => {
+        muro4V = -muro4V;
+    })
+
+    muro5.onCollide("wall", () => {
+        muro5V = -muro5V;
+    })
+
+    muro6.onCollide("wall", () => {
+        muro6V = -muro6V;
+    })
+
+    onUpdate(() => {
+        muro1.move(0, muro1V);
+        muro2.move(0, muro2V);
+        muro3.move(muro3V, 0);
+        muro4.move(0, muro4V);
+        muro5.move(0, muro5V);
+        muro6.move(0, muro6V);
+    })
+
+    let temChave = false;
+
+    add([
+        "alcapao",
+        "wall",
+        sprite("alcapao"),
+        pos(totalWidth * 0.95, totalHeight * 0.025),
+        scale(2),
+        area(),
+        solid(),
+    ])
+
+    add([
+        "key",
+        sprite('key'),
+        pos(totalWidth * 0.9, totalHeight * 0.9),
+        scale(2),
+        area(),
+    ])
+
+    player.onCollide("key", () => {
+        temChave = true;
+        destroyAll("key")
+    })
+
+    player.onCollide("alcapao", () => {
+        if (temChave) {
+            destroyAll("alcapao")
+            add([
+                "levelEnd",
+                "wall",
+                sprite("levelEnd"),
+                pos(totalWidth * 0.95, totalHeight * 0.025),
+                scale(1.5),
+                area(),
+            ])
+        }
+    })
+
+    let corBackground = "black";
+
+    loop(4, () => {
+        if(corBackground == "white") {
+            corBackground = "black";
+            background.use(color(0, 0, 0));
+        } else {
+            corBackground = "white";
+            background.use(color(255, 255, 255));
+        }
+    })
+
+    player.onCollide("levelEnd", () => {
+        
+    })
+})
+
+go("nivel5");
