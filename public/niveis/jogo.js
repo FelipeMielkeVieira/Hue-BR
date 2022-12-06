@@ -53,7 +53,8 @@ scene("nivel1", () => {
         pos(20, 20),
         color(0, 0, 0, 0),
         text("Nivel 1", {
-            size: 35,
+            size: 50,
+            font: "apl386o",
         }),
     ])
 
@@ -306,7 +307,8 @@ scene("nivel2", () => {
         pos(20, 20),
         color(125, 125, 125),
         text("Nivel 2", {
-            size: 35,
+            size: 50,
+            font: "apl386o",
         }),
     ])
 
@@ -724,10 +726,11 @@ scene("nivel3", () => {
     ])
 
     add([
-        pos(20, 20),
+        pos(10, 10),
         color(0, 0, 0, 0),
         text("Nivel 3", {
-            size: 35,
+            size: 50,
+            font: "apl386o",
         }),
     ])
 
@@ -737,6 +740,7 @@ scene("nivel3", () => {
         pos(totalWidth * 0.115, totalHeight * 0.4),
         area(),
         solid(),
+        z(1),
     ])
 
     let speed = 200;
@@ -908,7 +912,7 @@ scene("nivel3", () => {
         area(),
         solid(),
     ])
-    
+
     const redWall2 = add([
         "redWall",
         rect(totalWidth * 0.1, totalHeight * 0.15),
@@ -1048,7 +1052,7 @@ scene("nivel3", () => {
     const yellowBut2 = add([
         "yellowBut2",
         sprite("yellowButR"),
-        pos(totalWidth * 0.168 , totalHeight * 0.8),
+        pos(totalWidth * 0.168, totalHeight * 0.8),
         scale(scaleBut),
         area()
     ])
@@ -1056,7 +1060,7 @@ scene("nivel3", () => {
     const blueBut3 = add([
         "blueBut3",
         sprite("blueButL"),
-        pos(totalWidth * 0.15 , totalHeight * 0.09),
+        pos(totalWidth * 0.15, totalHeight * 0.09),
         scale(scaleBut),
         area()
     ])
@@ -1064,7 +1068,7 @@ scene("nivel3", () => {
     const redBut2 = add([
         "redBut2",
         sprite("redButR"),
-        pos(totalWidth * 0.168 , totalHeight * 0.09),
+        pos(totalWidth * 0.168, totalHeight * 0.09),
         scale(scaleBut),
         area()
     ])
@@ -1072,7 +1076,7 @@ scene("nivel3", () => {
     const blueBut4 = add([
         "blueBut4",
         sprite("blueButL"),
-        pos(totalWidth * 0.45 , totalHeight * 0.09),
+        pos(totalWidth * 0.45, totalHeight * 0.09),
         scale(scaleBut),
         area()
     ])
@@ -1080,7 +1084,7 @@ scene("nivel3", () => {
     const redBut3 = add([
         "redBut3",
         sprite("redButR"),
-        pos(totalWidth * 0.468 , totalHeight * 0.09),
+        pos(totalWidth * 0.468, totalHeight * 0.09),
         scale(scaleBut),
         area()
     ])
@@ -1088,7 +1092,7 @@ scene("nivel3", () => {
     const greenBut3 = add([
         "greenBut3",
         sprite("greenButL"),
-        pos(totalWidth * 0.4 , totalHeight * 0.8),
+        pos(totalWidth * 0.4, totalHeight * 0.8),
         scale(scaleBut),
         area()
     ])
@@ -1096,7 +1100,7 @@ scene("nivel3", () => {
     const yellowBut3 = add([
         "yellowBut3",
         sprite("yellowButR"),
-        pos(totalWidth * 0.418 , totalHeight * 0.8),
+        pos(totalWidth * 0.418, totalHeight * 0.8),
         scale(scaleBut),
         area()
     ])
@@ -1104,7 +1108,7 @@ scene("nivel3", () => {
     const redBut4 = add([
         "redBut4",
         sprite("redButL"),
-        pos(totalWidth * 0.5 , totalHeight * 0.5),
+        pos(totalWidth * 0.5, totalHeight * 0.5),
         scale(scaleBut),
         area()
     ])
@@ -1181,27 +1185,27 @@ scene("nivel3", () => {
         readd(orangeWall1);
         readd(orangeWall2);
 
-        if(corBackground == "blue") {
+        if (corBackground == "blue") {
             destroy(blueWall1);
             destroy(blueWall2);
             destroy(blueWall3);
         }
-        if(corBackground == "red") {
+        if (corBackground == "red") {
             destroy(redWall1);
             destroy(redWall2);
             destroy(redWall3);
         }
-        if(corBackground == "green") {
+        if (corBackground == "green") {
             destroy(greenWall1);
             destroy(greenWall2);
         }
-        if(corBackground == "yellow") {
+        if (corBackground == "yellow") {
             destroy(yellowWall1);
             destroy(yellowWall2);
             destroy(yellowWall3);
             destroy(yellowWall4);
         }
-        if(corBackground == "orange") {
+        if (corBackground == "orange") {
             destroy(orangeWall1);
             destroy(orangeWall2);
         }
@@ -1437,10 +1441,11 @@ scene("nivel4", () => {
     ])
 
     add([
-        pos(20, 20),
-        color(125, 125, 125),
+        pos(10, 10),
+        color(0, 0, 0, 0),
         text("Nivel 4", {
-            size: 35,
+            size: 50,
+            font: "apl386o",
         }),
         z(1)
     ])
@@ -1693,7 +1698,7 @@ scene("nivel4", () => {
     const muro1 = add([
         "blackWall",
         "muro1",
-        rect(totalWidth * 0.653, 30),
+        rect(totalWidth * 0.652, 30),
         pos(totalWidth * 0.177, totalHeight * 0.1),
         color(0, 0, 0),
         area(),
@@ -1753,7 +1758,7 @@ scene("nivel4", () => {
             trocaCor()
         }
     })
-    
+
     player.onCollide("yellowBlueBut", () => {
         let r = background.color.r
         let g = background.color.g
@@ -1873,6 +1878,7 @@ scene("nivel4", () => {
             color(125, 125, 125),
             text("Perdeu!", {
                 size: 100,
+                font: "apl386o",
             }),
             z(1)
         ])
@@ -1890,6 +1896,7 @@ scene("nivel4", () => {
             color(125, 125, 125),
             text("Perdeu!", {
                 size: 100,
+                font: "apl386o",
             }),
             z(1)
         ])
@@ -1907,7 +1914,7 @@ scene("nivel4", () => {
     ])
 
     player.onCollide("levelEnd", () => {
-        go("nivel4")
+        go("nivel5")
     })
 
     let speed = 200;
@@ -2054,10 +2061,12 @@ scene("nivel5", () => {
     ])
 
     add([
-        pos(20, 20),
+        'texto',
+        pos(10, 10),
         color(0, 0, 0, 0),
         text("Nivel 5", {
-            size: 35,
+            size: 50,
+            font: "apl386o",
         }),
     ])
 
@@ -2116,6 +2125,7 @@ scene("nivel5", () => {
             color(125, 125, 125),
             text("Perdeu!", {
                 size: 100,
+                font: "apl386o",
             }),
             z(1)
         ])
@@ -2286,18 +2296,34 @@ scene("nivel5", () => {
     let corBackground = "black";
 
     loop(4, () => {
-        if(corBackground == "white") {
+        if (corBackground == "white") {
             corBackground = "black";
             background.use(color(0, 0, 0));
-        } else {
+        } else if(corBackground == "black") {
             corBackground = "white";
             background.use(color(255, 255, 255));
         }
     })
-
+    
     player.onCollide("levelEnd", () => {
-        
+        corBackground = "";
+        background.use(color(255, 255, 255));
+        destroyAll('blackWall')
+        destroyAll('texto')
+        destroyAll('levelEnd')
+        add([
+            pos(center()),
+            origin("center"),
+            color(125, 125, 125),
+            text("Obrigado por Jogar!", {
+                size: 80,
+                font: "apl386o",
+            }),
+        ])
+        wait(5, () => {
+            window.location.href = "/menu"
+        })
     })
 })
 
-go("nivel5");
+go("nivel1");
