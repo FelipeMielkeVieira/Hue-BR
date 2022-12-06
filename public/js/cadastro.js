@@ -11,15 +11,18 @@ btn.addEventListener("click", function () {
 
     console.log("Dados: ", email, nome, senha, nivel);
 
+    console.log(JSON.stringify({ id: id, email: email, nome: nome, senha: senha, nivel: nivel }))
+
     fetch("/cadastrar",
         {
             method: "POST",
-            body: JSON.stringify({ id, email, nome, senha, nivel }),
+            body: JSON.stringify({ id: id, email: email, nome: nome, senha: senha, nivel: nivel }),
             headers: { "Content-Type": "application/json" }
         },
     )
         .then(res => {
-            alert("Cadastro feito com sucesso!")
-            window.location.href = "/"
         })
+        
+    alert("Cadastro feito com sucesso!")
+    window.location.href = "/"
 });
