@@ -632,7 +632,7 @@ scene("nivel2", () => {
     ])
 
     player.onCollide("levelEnd", () => {
-        go("level3")
+        go("nivel3")
     })
 
     let speed = 200;
@@ -2003,4 +2003,4 @@ scene("nivel4", () => {
     })
 })
 
-go("nivel4");
+go("nivel1");
