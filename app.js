@@ -7,12 +7,16 @@ const app = express()
 
 const path = require("path");
 
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(express.json())
+
 const sql = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'root',
     port: 3306,
-    // database: 'hue_br'
+    database: 'hue_br'
 });
 
 // use the express-static middleware
@@ -47,6 +51,14 @@ app.get("/niveis/1", function (req, res) {
 //     res.sendFile(path.join(__dirname, "./public/niveis/jogo3.html"));
 // })
 
+// app.get("/niveis/4", function (req, res) {
+//     res.sendFile(path.join(__dirname, "./public/niveis/jogo4.html"));
+// })
+
+// app.get("/niveis/5", function (req, res) {
+//     res.sendFile(path.join(__dirname, "./public/niveis/jogo5.html"));
+// })
+
 app.get("/usuarios", (req, res) => {
     sql.query("select * from usuario", (error, results, fields) => {
         res.json(results);
@@ -54,8 +66,7 @@ app.get("/usuarios", (req, res) => {
 })
 
 app.post("/cadastrar", (req, res) => {
-    console.log("dados: ", req.body)
-    sql.query("insert into usuario (id, email, nome, senha, nivel) values (?,?,?,?,?)", [null, req.body.email, req.body.nome, req.body.senha, req.body.nivel])
+    sql.query("insert into usuario values (?,?,?,?,?)", [null, req.body.email, req.body.nome, req.body.senha, req.body.nivel])
 })
 
 // start the server listening for requests

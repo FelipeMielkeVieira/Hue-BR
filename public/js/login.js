@@ -22,17 +22,20 @@ function dadosLogin() {
 
 function verificarLogin(email, senha, results) {
     let verificacao = false;
+    let usuario = null;
 
     console.log(email, senha, results);
 
     for (let result of results) {
         if (email == result.email && senha == result.senha) {
             verificacao = true;
+            usuario = result;
         }
     }
 
     if (verificacao) {
         window.location.href = '/menu';
+        localStorage.setItem("usuario", usuario)
     } else {
         alert("Login inválido!")
     }
