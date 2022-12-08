@@ -1,13 +1,14 @@
-function jogar(nivel) {
-    switch (nivel) {
+function campanha(n) {
+    switch (n) {
         case 1:
-
+            window.location.href = "/niveis"
             break;
-        case 2:
-
-            break;
-        case 3:
-            
+        default:
+            console.log("Deu erro!")
             break;
     }
+}
+
+function voltarMenu(){
+    window.location.href = "/menu"
 }

@@ -55,6 +55,7 @@ body {
     background: #001848;
     border: 5px solid #FFFFFF;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 .criadorCamp {
@@ -71,4 +72,18 @@ body {
     flex-direction: column;
     margin-top: 10px;
     overflow: auto;
+}
+
+.btnVoltar{
+    margin: 10px;
+    width: 150px;
+    height: 50px;
+    background-color: #001848;
+    color: white;
+    outline: none;
+    border-radius: 20px;
+    border: 2px solid #FFFFFF;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 900;
 }

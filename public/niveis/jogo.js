@@ -2,6 +2,30 @@ let totalWidth = window.innerWidth * 0.98;
 let totalHeight = window.innerHeight * 0.96;
 let temChave = false
 let scaleBut = 2
+let id = localStorage.getItem("id")
+
+function salvarNivel(nivel) {
+    fetch(`/salvarnivel`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, nivel })
+    })
+        .then(res => { })
+}
+
+window.addEventListener('load', () => {
+    fetch(`/nivel/${id}`, {
+        method: "GET",
+        mode: 'cors',
+        cache: "default"
+    })
+        .then(res => {
+            res.json()
+                .then(data => {
+                    jogarNivel(data)
+                })
+        })
+})
 
 kaboom({
     debug: true,
@@ -40,7 +64,6 @@ loadSprite("redWall", "sprites/walls/redWall.png")
 loadSprite("orangeWall", "sprites/walls/orangeWall.png")
 
 scene("nivel1", () => {
-
     const background = add([
         pos(0, 0),
         rect(totalWidth, totalHeight),
@@ -215,10 +238,15 @@ scene("nivel1", () => {
     })
 
     player.onCollide("levelEnd", () => {
+        salvarNivel(2)
         go("nivel2")
     })
 
     let speed = 200;
+
+    onKeyDown("f4", () => {
+        window.location.href = "/menu"
+    })
 
     onKeyDown("left", () => {
         player.use(sprite("playerL"));
@@ -634,10 +662,15 @@ scene("nivel2", () => {
     ])
 
     player.onCollide("levelEnd", () => {
+        salvarNivel(3)
         go("nivel3")
     })
 
     let speed = 200;
+
+    onKeyDown("f4", () => {
+        window.location.href = "/menu"
+    })
 
     onKeyDown("left", () => {
         player.use(sprite("playerL"));
@@ -744,6 +777,10 @@ scene("nivel3", () => {
     ])
 
     let speed = 200;
+
+    onKeyDown("f4", () => {
+        window.location.href = "/menu"
+    })
 
     onKeyDown("left", () => {
         player.use(sprite("playerL"));
@@ -1425,6 +1462,7 @@ scene("nivel3", () => {
     })
 
     player.onCollide("levelEnd", () => {
+        salvarNivel(4)
         go("nivel4")
     })
 
@@ -1914,10 +1952,15 @@ scene("nivel4", () => {
     ])
 
     player.onCollide("levelEnd", () => {
+        salvarNivel(5)
         go("nivel5")
     })
 
     let speed = 200;
+
+    onKeyDown("f4", () => {
+        window.location.href = "/menu"
+    })
 
     onKeyDown("left", () => {
         player.use(sprite("playerL"));
@@ -2079,6 +2122,10 @@ scene("nivel5", () => {
     ])
 
     let speed = 200;
+
+    onKeyDown("f4", () => {
+        window.location.href = "/menu"
+    })
 
     onKeyDown("left", () => {
         player.use(sprite("playerL"));
@@ -2299,13 +2346,14 @@ scene("nivel5", () => {
         if (corBackground == "white") {
             corBackground = "black";
             background.use(color(0, 0, 0));
-        } else if(corBackground == "black") {
+        } else if (corBackground == "black") {
             corBackground = "white";
             background.use(color(255, 255, 255));
         }
     })
-    
+
     player.onCollide("levelEnd", () => {
+        salvarNivel(1)
         corBackground = "";
         background.use(color(255, 255, 255));
         destroyAll('blackWall')
@@ -2326,4 +2374,8 @@ scene("nivel5", () => {
     })
 })
 
-go("nivel1");
+function jogarNivel(dados){
+    let nivelBD = dados[0].nivel
+    console.log(nivelBD)
+    go("nivel" + nivelBD)
+}
